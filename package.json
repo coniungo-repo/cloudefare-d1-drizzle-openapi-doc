@@ -1,15 +1,31 @@
 {
-  "name": "cloudfare-workers-d1",
-  "type": "module",
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
-  },
-  "dependencies": {
-    "hono": "^4.12.9"
-  },
-  "devDependencies": {
-    "wrangler": "^4.4.0"
-  }
+	"name": "cloudfare-workers-d1",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "wrangler dev",
+		"db:generate": "drizzle-kit generate",
+		"db:up": "drizzle-kit up",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+	},
+	"dependencies": {
+		"@asteasolutions/zod-to-openapi": "^8.5.0",
+		"@hono/zod-openapi": "^1.2.4",
+		"@libsql/client": "^0.17.2",
+		"@scalar/hono-api-reference": "^0.10.5",
+		"drizzle-orm": "^0.45.2",
+		"drizzle-zod": "^0.8.3",
+		"hono": "^4.12.9",
+		"hono-pino": "^0.10.3",
+		"pino": "^10.3.1",
+		"zod": "^4.3.6"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20260329.1",
+		"@types/node": "^25.5.0",
+		"dotenv": "^17.3.1",
+		"drizzle-kit": "^0.31.10",
+		"wrangler": "^4.4.0"
+	}
 }

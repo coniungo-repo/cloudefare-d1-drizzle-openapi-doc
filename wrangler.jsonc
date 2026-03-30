@@ -2,10 +2,20 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cloudfare-workers-d1",
   "main": "src/index.ts",
-  "compatibility_date": "2026-03-30"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
+  "compatibility_date": "2026-03-30",
+   "compatibility_flags": [
+     "nodejs_compat"
+   ],
+
+    "d1_databases": [
+    {
+     "binding": "DB",
+      "database_name": "todo",
+      "database_id": "a8f182b8-0045-49f8-9663-dd07cc5c0d50",
+      "migrations_dir": "./src/db/migrations"
+     }
+  ]
+
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },
